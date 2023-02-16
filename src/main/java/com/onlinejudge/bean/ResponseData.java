@@ -1,12 +1,12 @@
 package com.onlinejudge.bean;
 
-public class ResponeData<T>{
+public class ResponseData<T>{
     private int code;
     public boolean isSucess;
     private String msg;
     private T data;
 
-    public ResponeData(int code, String msg, T data,boolean isSucess) {
+    public ResponseData(int code, String msg, T data, boolean isSucess) {
         this.code = code;
         this.msg = msg;
         this.data = data;
@@ -36,16 +36,16 @@ public class ResponeData<T>{
     public void setData(T data) {
         this.data = data;
     }
-    public static ResponeData Success(int msgCode){
-        return new ResponeData(msgCode,null,null,true);
+    public static ResponseData Success(int msgCode){
+        return new ResponseData(msgCode,null,null,true);
     }
-    public static ResponeData Success(int msgCode,Object data){
-        return new ResponeData(msgCode,null,data,true);
+    public static ResponseData Success(int msgCode, Object data){
+        return new ResponseData(msgCode,null,data,true);
     }
-    public static  ResponeData Error(int msgCode){
-        return new ResponeData(msgCode,null,null,false);
+    public static ResponseData Error(int msgCode){
+        return new ResponseData(msgCode,null,null,false);
     }
-    public static  ResponeData Error(String msg){
-        return new ResponeData(-1,msg,null,false);
+    public static ResponseData Error(String msg){
+        return new ResponseData(-1,msg,null,false);
     }
 }
